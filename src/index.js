@@ -12,5 +12,9 @@ app.use(bodyparser.json());
 
 app.use("/api/products", productsRoutes);
 
+app.use("/", (req, res) => {
+  res.json({ hola: "Hola Mundo" });
+});
+
 app.listen(process.env.PORT || 3000);
 console.log("server on port", process.env.PORT || 3000);
